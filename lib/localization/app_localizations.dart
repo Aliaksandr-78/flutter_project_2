@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+//
 class AppLocalizations {
   final Locale locale;
 
@@ -17,8 +18,8 @@ class AppLocalizations {
   late Map<String, String> _localizedStrings;
 
   Future<bool> load() async {
-    String jsonString =
-        await rootBundle.loadString('localization/app_${locale.languageCode}.arb');
+    String jsonString = await rootBundle
+        .loadString('localization/app_${locale.languageCode}.arb');
     _localizedStrings = Map<String, String>.from(json.decode(jsonString));
     return true;
   }
